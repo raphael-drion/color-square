@@ -14,7 +14,7 @@
 			
 				<table id="login">
 					<tr>
-						<td><INPUT type=text id="nom" size="23" value="ENTER YOUR ID"></td>
+						<td><INPUT type=text id="nom" size="23" value="ENTER ID"></td>
 						<td><button id="valid_login">LOGIN</button></td>
 					</tr>
 				</table>
@@ -58,7 +58,7 @@
 			 
 				var test = $("#nom").val();
 
-				if((test != '') && (test != 'ENTER YOUR ID')){
+				if((test != '') && (test != 'ENTER ID') && (test != 'NOT VALID ID')){
 
 				$("#nav").animate({	marginTop: "40px" }, 1500, auth_visibility );
 				
