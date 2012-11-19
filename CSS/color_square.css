@@ -1,0 +1,40 @@
+#nav{
+
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 200px;
+	width: 400px;
+
+}
+
+#logo{
+	padding-left : 5px;
+}
+
+#login{
+	margin-top: 20px;
+}
+
+#authentification{
+	opacity: 0;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 580px;
+
+}
+
+button{
+
+	background-color : white;
+	border : 1px solid #abadb3;
+	color : #5b5d64;
+
+}
+
+#nom{
+
+	color : #5b5d64;
+
+}
+
