@@ -1,16 +1,45 @@
 body{
 
 	overflow:hidden;
-	background-image: url(../IMG/background.png);
+	/*background-image: url(../IMG/background.png);*/
 
 }
+
+.column{
+
+	position: absolute;	
+	z-index: -1;
+	top: 0px;
+
+}
+
+#column1{
+
+	left:-100px;
+	
+
+}
+
+#column2{
+
+	left:-100px;
+
+}
+
+#column3{
+
+	left:-100px;
+
+}
+
+
 
 #nav{
 
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 200px;
-	width: 285px;
+	width: 290px;
 
 }
 
@@ -33,11 +62,12 @@ body{
 
 #valid_login{
 
-	background-color : #c3c4c8;
-	border : 1px solid #abadb3;
+	background-color : #7c7c7c;
+	border : 1px solid #a9a9a9	;
 	color : white;
 	cursor : pointer;
 	width : 75px;
+	font-weight:bold;
 	
 	transition: all 0.5s ease-in;  
 	-webkit-transition: all 0.5s ease-in;  
@@ -51,12 +81,15 @@ body{
 
 	background-color : #4c8ffe;
 	color : white;
+
 }
 
 input{
 
-	color : #8c8e95;
+	color : #7c7c7c;
 	outline-color: #4c8ffe;
-	border : 1px solid #c3c4c8;
+	border : 1px solid #7c7c7c;
+	font-weight:bold;
 }
+
 

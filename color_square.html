@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		 <title>COLOR²</title>
 		 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		 <link rel="stylesheet" type="text/css" href="CSS/init.css">
 		 <link rel="stylesheet" type="text/css" href="CSS/animations.css">
-		 <link rel="icon" type="image/png" href="IMG/ico.png">
+		 <link rel="icon" type="image/x-icon" href="IMG/cs.ico">
 		 
 	</head>
 	
 	<body onload="init()">
+	
+	
+		<img src="IMG/column1.png" class="column" id="column1"></img>
+		<img src="IMG/column2.png" class="column" id="column2"></img>
+		<img src="IMG/column3.png" class="column" id="column3"></img>
+		
+		
 		
 		<div id="nav">
 			
@@ -16,7 +24,7 @@
 			
 				<table id="login">
 					<tr>
-						<td><INPUT type=text id="content_login" size="28" value="YOUR ID" onkeypress="key_test()" onclick="selection()"></td>
+						<td><INPUT type=text id="content_login" size="29" value="YOUR ID" onkeypress="key_test()" onclick="selection()"></td>
 						<td><button id="valid_login" onclick="display()">LOG IN</button></td>
 					</tr>
 				</table>
@@ -24,6 +32,8 @@
 		</div>
 		
 		<div id = "authentification"></div>		
+		
+		
 	
 		<script type="text/javascript" src="js/animations.js"></script>
 		<script type="text/javascript" src="js/init.js"></script>		

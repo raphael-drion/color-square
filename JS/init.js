@@ -6,11 +6,11 @@ function init () {
 
 	paper = Raphael("authentification", 400, 400);
 	
-	rect_main = paper.rect(20, 20, 360, 360).attr({fill: "white", stroke: "#444549"});
-	rect_NW = paper.rect(20, 20, 10, 10).attr({fill: "red",cursor: "move", opacity: 0.7});
-	rect_NE = paper.rect(370, 20, 10, 10).attr({fill: "blue",cursor: "move", opacity: 0.7});
-	rect_SW = paper.rect(20, 370, 10, 10).attr({fill: "yellow",cursor: "move", opacity: 0.7});
-	rect_SE = paper.rect(370, 370, 10, 10).attr({fill: "#1dff00",cursor: "move", opacity: 0.7});
+	// rect_main = paper.rect(20, 20, 360, 360).attr({fill: "white", stroke: "#444549"});
+	rect_NW = paper.rect(20, 20, 20, 20).attr({fill: "red",cursor: "move", opacity: 0.7});
+	rect_NE = paper.rect(360, 20, 20, 20).attr({fill: "#0080ff",cursor: "move", opacity: 0.7});
+	rect_SW = paper.rect(20, 360, 20, 20).attr({fill: "#ffae00",cursor: "move", opacity: 0.7});
+	rect_SE = paper.rect(360, 360, 20, 20).attr({fill: "#87ff00",cursor: "move", opacity: 0.7});
 	
 	init_lines();
 	init_event_NW();
@@ -46,7 +46,7 @@ function init_event_NW(){
 			var width_NW = cut(rect_NW.attr("width"));
 			var height_NW = cut(rect_NW.attr("height"));
 						
-			if( ( width_NW == 10) || ( height_NW == 10) ) { this.attr({width: 10, height:10});this.toFront();init_lines();}
+			if( ( width_NW == 10) || ( height_NW == 10) ) { this.attr({width: 20, height:20});this.toFront();init_lines();}
 			else{
 				this.attr({width: width_NW, height: height_NW});
 				this.toFront();
@@ -93,7 +93,7 @@ function init_event_NE(){
 			var width_NE = cut(rect_NE.attr("width"));
 			var height_NE = cut(rect_NE.attr("height"));
 						
-			if( ( width_NE == 10) || ( height_NE == 10) ) { this.attr({x : 370, y : 20,width: 10, height:10});init_lines();}
+			if( ( width_NE == 10) || ( height_NE == 10) ) { this.attr({x : 360, y : 20,width: 20, height:20});init_lines();}
 			else{
 				this.attr({x : (380 - width_NE), width: width_NE, height: height_NE});
 				this.toFront();
@@ -138,7 +138,7 @@ function init_event_SW(){
 			var width_SW = cut(rect_SW.attr("width"));
 			var height_SW = cut(rect_SW.attr("height"));
 						
-			if( ( width_SW == 10) || ( height_SW == 10) ) { this.attr({x : 20, y : 370,width: 10, height:10});init_lines();}
+			if( ( width_SW == 10) || ( height_SW == 10) ) { this.attr({x : 20, y : 360,width: 20, height:20});init_lines();}
 			else{
 				this.attr({y : (380 - height_SW), width: width_SW, height: height_SW});
 				this.toFront();
@@ -183,7 +183,7 @@ function init_event_SE(){
 			var width_SE = cut(rect_SE.attr("width"));
 			var height_SE = cut(rect_SE.attr("height"));
 						
-			if( ( width_SE == 10) || ( height_SE == 10) ) { this.attr({x : 370, y : 370,width: 10, height:10});init_lines();}
+			if( ( width_SE == 10) || ( height_SE == 10) ) { this.attr({x : 360, y : 360,width: 20, height:20});init_lines();}
 			else{
 				this.attr({x : (380 - width_SE), y : (380 - height_SE), width: width_SE, height: height_SE});
 				this.toFront();
@@ -296,9 +296,10 @@ function init_lines(type){
 
 function path(x_start, y_start, x_end, y_end){
 
-		paper.path("M" + x_start +" " + y_start + "L" + x_end + " " + y_end).attr({opacity: 0.3});
+		paper.path("M" + x_start +" " + y_start + "L" + x_end + " " + y_end).attr({opacity: 1});
 
 }
+
 
 function tab_fill(width,height,corner){
 

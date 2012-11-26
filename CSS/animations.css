@@ -124,13 +124,13 @@
 @keyframes validation{
 
 	from { background-color: #c3c4c; color:white;}
-	to   { background-color: #4aff33; color:white;}
+	to   { background-color: #5dd64e; color:white;}
 }
 
 @-moz-keyframes validation{
 
 	from { background-color: #c3c4c; color:white;}
-	to   { background-color: #4aff33; color:white;}
+	to   { background-color: #5dd64e; color:white;}
 	
 }
 
@@ -144,7 +144,7 @@
 @-o-keyframes validation{
 
 	from { background-color: #c3c4c; color:white;}
-	to   { background-color: #4aff33; color:white;}
+	to   { background-color: #5dd64e; color:white;}
 	
 }
 
@@ -155,5 +155,120 @@
 	-ms-animation: validation 1s linear forwards;
 	-o-animation: validation 1s linear forwards;
 	animation: validation 1s linear forwards;
+	 
+}
+
+/* COLUMN1 */
+
+@keyframes column1{
+
+	from { left: -100px; }
+	to   { left: 75px; }
+}
+
+@-moz-keyframes column1{
+
+	from { left: -100px; }
+	to   { left: 75px;}
+	
+}
+
+@-webkit-keyframes column1{
+
+	from { left: -100px;}
+	to   { left: 75px;}
+	
+}
+
+@-o-keyframes column1{
+
+	from { left: -100px;}
+	to   { left: 75px;}
+	
+}
+
+#column1{
+   
+	-webkit-animation: column1 2s linear forwards;
+	-moz-animation: column1 2s linear forwards;
+	-ms-animation: column1 2s linear forwards;
+	-o-animation: column1 2s linear forwards;
+	animation: column1 2s linear forwards;
+	 
+}
+
+/* COLUMN2 */
+
+@keyframes column2{
+
+	from { left: -100px; }
+	to   { left: 145px; }
+}
+
+@-moz-keyframes column2{
+
+	from { left: -100px; }
+	to   { left: 145px;}
+	
+}
+
+@-webkit-keyframes column2{
+
+	from { left: -100px;}
+	to   { left: 145px;}
+	
+}
+
+@-o-keyframes column2{
+
+	from { left: -100px;}
+	to   { left: 145px;}
+	
+}
+
+#column2{
+   
+	-webkit-animation: column2 1.5s linear forwards 1s;
+	-moz-animation: column2 1.5s linear forwards 1s;
+	-ms-animation: column2 1.5s linear forwards 1s;
+	-o-animation: column2 1.5s linear forwards 1s;
+	animation: column2 1.5s linear forwards 1s;
+	 
+}/* COLUMN3 */
+
+@keyframes column3{
+
+	from { left: -100px; }
+	to   { left: 215px; }
+}
+
+@-moz-keyframes column3{
+
+	from { left: -100px; }
+	to   { left: 215px;}
+	
+}
+
+@-webkit-keyframes column3{
+
+	from { left: -100px;}
+	to   { left: 215px;}
+	
+}
+
+@-o-keyframes column3{
+
+	from { left: -100px;}
+	to   { left: 215px;}
+	
+}
+
+#column3{
+   
+	-webkit-animation: column3 1s linear forwards 2s;
+	-moz-animation: column3 1s linear forwards 2s;
+	-ms-animation: column3 1s linear forwards 2s;
+	-o-animation: column3 1s linear forwards 2s;
+	animation: column3 1s linear forwards 2s;
 	 
 }
