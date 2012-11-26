@@ -2,7 +2,9 @@
 <html>
 	<head>
 		 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		 <link rel="stylesheet" type="text/css" href="CSS/color_square.css">
+		 <link rel="stylesheet" type="text/css" href="CSS/init.css">
+		 <link rel="stylesheet" type="text/css" href="CSS/animations.css">
+		 <link rel="icon" type="image/png" href="IMG/ico.png">
 		 
 	</head>
 	
@@ -14,71 +16,18 @@
 			
 				<table id="login">
 					<tr>
-						<td><INPUT type=text id="nom" size="23" value="ENTER ID"></td>
-						<td><button id="valid_login">LOGIN</button></td>
+						<td><INPUT type=text id="content_login" size="28" value="YOUR ID" onkeypress="key_test()" onclick="selection()"></td>
+						<td><button id="valid_login" onclick="display()">LOG IN</button></td>
 					</tr>
 				</table>
 						
 		</div>
 		
-		<div id = "authentification">
-		
-		</div>		
-
-
-		</div>
-		
+		<div id = "authentification"></div>		
 	
-	
-		<script type="text/javascript" src="js/color_square.js"></script>
+		<script type="text/javascript" src="js/animations.js"></script>
+		<script type="text/javascript" src="js/init.js"></script>		
 		<script type="text/javascript" src="js/raphael.js"></script>
-		<script type="text/javascript" src="js/jquery.js"></script>
-		<script>
-		$(document).ready(function(){
-		
-			function auth_visibility(){
-			
-				$("#authentification").animate({opacity: 1}, 1500 );
-				
-			}
-		
-			$("#nom").click(function(){
-			 
-				this.select();
-			 
-			});
-			
-			$("#valid_login").hover(function() {
-			 $(this).css('cursor','pointer');
-			 }, function() {
-			 $(this).css('cursor','auto');
-			});
-			
-			$("#valid_login").click(function(){
-			 
-				var test = $("#nom").val();
-
-				if((test != '') && (test != 'ENTER ID') && (test != 'NOT VALID ID')){
-
-				$("#nav").animate({	marginTop: "40px" }, 1500, auth_visibility );
-				
-
-				}else{
-
-					if(test == ''){	
-						$("#nom").val("EMPTY FIELD !");
-					}else{
-						$("#nom").val("NOT VALID ID");
-					}
-					$("#nom").select();
-
-				}
-
-			});
-		});
-			
-		</script>
-		
 	
 	</body>
 	

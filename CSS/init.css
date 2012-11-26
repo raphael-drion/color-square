@@ -1,0 +1,62 @@
+body{
+
+	overflow:hidden;
+	background-image: url(../IMG/background.png);
+
+}
+
+#nav{
+
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 200px;
+	width: 285px;
+
+}
+
+#logo{
+	padding-left : 5px;
+}
+
+#login{
+	margin-top: 20px;
+}
+
+#authentification{
+	opacity: 0;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 400px;
+
+}
+
+#valid_login{
+
+	background-color : #c3c4c8;
+	border : 1px solid #abadb3;
+	color : white;
+	cursor : pointer;
+	width : 75px;
+	
+	transition: all 0.5s ease-in;  
+	-webkit-transition: all 0.5s ease-in;  
+	-moz-transition: all 0.5s ease-in;  
+	-ms-transition: all 0.5s ease-in;  
+	-o-transition: all 0.5s ease-in;  
+	transition: all 0.5s ease-in;  
+}
+
+#valid_login:hover{
+
+	background-color : #4c8ffe;
+	color : white;
+}
+
+input{
+
+	color : #8c8e95;
+	outline-color: #4c8ffe;
+	border : 1px solid #c3c4c8;
+}
+

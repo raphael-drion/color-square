@@ -1,14 +1,16 @@
 function init () {
 	
 	tab_drag = [0,0,0,0];
+	
+	tab_final = [ [0,0,0,0], [0,0,0,0] , [0,0,0,0] , [0,0,0,0] ];	
 
 	paper = Raphael("authentification", 400, 400);
 	
-	rect_main = paper.rect(20, 20, 360, 360).attr({fill: "white"});
-	rect_NW = paper.rect(20, 20, 10, 10).attr({fill: "red",cursor: "move", opacity: 1});
-	rect_NE = paper.rect(370, 20, 10, 10).attr({fill: "blue",cursor: "move", opacity: 1});
-	rect_SW = paper.rect(20, 370, 10, 10).attr({fill: "yellow",cursor: "move", opacity: 1});
-	rect_SE = paper.rect(370, 370, 10, 10).attr({fill: "purple",cursor: "move", opacity: 1});
+	rect_main = paper.rect(20, 20, 360, 360).attr({fill: "white", stroke: "#444549"});
+	rect_NW = paper.rect(20, 20, 10, 10).attr({fill: "red",cursor: "move", opacity: 0.7});
+	rect_NE = paper.rect(370, 20, 10, 10).attr({fill: "blue",cursor: "move", opacity: 0.7});
+	rect_SW = paper.rect(20, 370, 10, 10).attr({fill: "yellow",cursor: "move", opacity: 0.7});
+	rect_SE = paper.rect(370, 370, 10, 10).attr({fill: "#1dff00",cursor: "move", opacity: 0.7});
 	
 	init_lines();
 	init_event_NW();
@@ -26,6 +28,8 @@ function init_event_NW(){
 		
 		this.x = this.attr("x");
 		this.y = this.attr("y");
+		
+		rect_NW.attr({opacity: 0.8});
 	
 	}
 	
@@ -46,9 +50,12 @@ function init_event_NW(){
 			else{
 				this.attr({width: width_NW, height: height_NW});
 				this.toFront();
-				init_lines();
 			}			
 			
+			tab_fill(width_NW,height_NW,'NW');
+			rect_NW.undrag();
+			rect_NW.attr({cursor: "default"});
+			rect_NW.attr({opacity: 1});
 			tab_drag[0] = 1;
 			checktab();
 			
@@ -67,6 +74,8 @@ function init_event_NE(){
 		
 		this.x = this.attr("x");
 		this.y = this.attr("y");
+		
+		rect_NE.attr({opacity: 0.8});
 	
 	}
 	
@@ -88,9 +97,12 @@ function init_event_NE(){
 			else{
 				this.attr({x : (380 - width_NE), width: width_NE, height: height_NE});
 				this.toFront();
-				init_lines();
 			}			
 			
+			tab_fill(width_NE,height_NE,'NE');
+			rect_NE.undrag();
+			rect_NE.attr({cursor: "default"});
+			rect_NE.attr({opacity: 1});
 			tab_drag[1] = 1;
 			checktab();
 			
@@ -108,6 +120,8 @@ function init_event_SW(){
 		
 		this.x = this.attr("x");
 		this.y = this.attr("y");
+		
+		rect_SW.attr({opacity: 0.8});
 	
 	}
 	
@@ -128,9 +142,12 @@ function init_event_SW(){
 			else{
 				this.attr({y : (380 - height_SW), width: width_SW, height: height_SW});
 				this.toFront();
-				init_lines();
-			}			
-			
+			}	
+
+			tab_fill(width_SW,height_SW,'SW');
+			rect_SW.undrag();
+			rect_SW.attr({cursor: "default"});
+			rect_SW.attr({opacity: 1});
 			tab_drag[2] = 1;
 			checktab();
 			
@@ -148,6 +165,8 @@ function init_event_SE(){
 		
 		this.x = this.attr("x");
 		this.y = this.attr("y");
+		
+		rect_SE.attr({opacity: 0.8});
 	
 	}
 	
@@ -168,9 +187,12 @@ function init_event_SE(){
 			else{
 				this.attr({x : (380 - width_SE), y : (380 - height_SE), width: width_SE, height: height_SE});
 				this.toFront();
-				init_lines();
 			}			
 			
+			tab_fill(width_SE,height_SE,'SE');
+			rect_SE.undrag();
+			rect_SE.attr({cursor: "default"});
+			rect_SE.attr({opacity: 1});
 			tab_drag[3] = 1;
 			checktab();
 			
@@ -190,13 +212,45 @@ function checktab(){
 	
 	}
 	
+	
+	
 	if(test == 4){
+	
+	
+		paper.rect(20, 20, 360, 360).attr({fill: "white"});
+
+		rect_NW.toFront(); 
+		rect_NE.toFront();
+		rect_SW.toFront();
+		rect_SE.toFront(); 
+	
+		var test = '';
+		
+		for(k = 0; k < 4; k++){
+		
+			for(l = 0; l < 4; l++){
+			
+				tab_final[k][l];
+			
+				test += tab_final[k][l] + ' ';
+			
+			}
+			
+			test += '-';
+		}
+		
+		alert(test);
+		
+	
+	}
+	
+	/*if(test == 4){
 			
 		var rect_validation = paper.rect(200, 200, 10, 10).attr({fill: "green"});
             rect_validation.animate({x: 20, y: 20, width : 360, height : 360}, 750, babar);
 	
 	
-	}
+	}*/
 
 
 }
@@ -219,7 +273,7 @@ function cut(x){
 
 }
 
-function init_lines(){
+function init_lines(type){
 
 	for(k = 0; k < 3; k++){
 	
@@ -229,11 +283,11 @@ function init_lines(){
 		while(i < 380){		
 		
 			j = i + 10;
-		
+
 			path(i,l,j,l);
 			path(l,i,l,j);		
 
-			i = i + 20;
+			i = i + 10;
 			
 		}
 	}	
@@ -242,6 +296,66 @@ function init_lines(){
 
 function path(x_start, y_start, x_end, y_end){
 
-	paper.path("M" + x_start +" " + y_start + "L" + x_end + " " + y_end);
+		paper.path("M" + x_start +" " + y_start + "L" + x_end + " " + y_end).attr({opacity: 0.3});
+
+}
+
+function tab_fill(width,height,corner){
+
+	var x = width / 90;
+	var y = height / 90;
+
+	if(corner == 'NW'){
+	
+		for(i = 0; i < x; i++){
+
+			for(j = 0; j < y; j++){
+			
+				tab_final[j][i] = 1;
+			
+			}
+			
+		}
+	
+	
+	}else if(corner == 'NE'){
+	
+		for(i = 0; i < x; i++){
+
+			for(j = 0; j < y; j++){
+			
+				tab_final[j][3 - i] = 2;
+			
+			}
+			
+		}
+	
+	}else if(corner == 'SW'){
+	
+		for(i = 0; i < x; i++){
+
+			for(j = 0; j < y; j++){
+			
+				tab_final[3 - j][i] = 3;
+			
+			}
+			
+		}
+	
+	
+	}else if(corner == 'SE'){
+	
+		for(i = 0; i < x; i++){
+
+			for(j = 0; j < y; j++){
+			
+				tab_final[3 - j][3 - i] = 4;
+			
+			}
+			
+		}
+		
+	}
+
 
 }

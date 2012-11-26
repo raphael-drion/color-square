@@ -1,0 +1,159 @@
+/* MOVE */
+
+@keyframes move{
+
+	from { margin-top: 200px; }
+	to   { margin-top: 40px; }
+}
+
+@-moz-keyframes move{
+
+	from { margin-top: 200px; }
+	to   { margin-top: 40px; }
+	
+}
+
+@-webkit-keyframes move{
+
+	from { margin-top: 200px; }
+	to   { margin-top: 40px; }
+	
+}
+
+@-o-keyframes move{
+
+	from { margin-top: 200px; }
+	to   { margin-top: 40px; }
+	
+}
+
+.move{
+   
+	-webkit-animation: move 2s linear forwards;
+	-moz-animation: move 2s linear forwards;
+	-ms-animation: move 2s linear forwards;
+	-o-animation: move 2s linear forwards;
+	animation: move 2s linear forwards;
+	 
+}
+
+/* VISIBILIRY */
+
+@keyframes visibility{
+
+	from { opacity: 0; }
+	to   { opacity: 1; }
+}
+
+@-moz-keyframes visibility{
+
+	from { opacity: 0; }
+	to   { opacity: 1; }
+	
+}
+
+@-webkit-keyframes visibility{
+
+	from { opacity: 0; }
+	to   { opacity: 1; }
+	
+}
+
+@-o-keyframes visibility{
+
+	from { opacity: 0; }
+	to   { opacity: 1; }
+	
+}
+
+.visibility{
+   
+	-webkit-animation: visibility 2s linear forwards;
+	-moz-animation: visibility 2s linear forwards;
+	-ms-animation: visibility 2s linear forwards;
+	-o-animation: visibility 2s linear forwards;
+	animation: visibility 2s linear forwards;
+	 
+}
+
+/* OUTLINE */
+
+@keyframes outline{
+
+	from { outline-color: #4c8ffe; color:#5b5d64;}
+	50% { outline-color: red; color:red;}
+	to   { outline-color: #4c8ffe; color:#5b5d64;}
+}
+
+@-moz-keyframes outline{
+
+	from { outline-color: #4c8ffe; color:#5b5d64;}
+	50% { outline-color: red; color:red;}
+	to   { outline-color: #4c8ffe; color:#5b5d64;}
+	
+}
+
+@-webkit-keyframes outline{
+
+	from { outline-color: #4c8ffe; color:#5b5d64;}
+	50% { outline-color: red; color:red;}
+	to   { outline-color: #4c8ffe; color:#5b5d64;}
+	
+}
+
+@-o-keyframes outline{
+
+	from { outline-color: #4c8ffe; color:#5b5d64;}
+	50% { outline-color: red; color:red;}
+	to   { outline-color: #4c8ffe; color:#5b5d64;}
+	
+}
+
+.outline{
+   
+	-webkit-animation: outline 1.5s ease;
+	-moz-animation: outline 1.5s ease;
+	-ms-animation: outline 1.5s ease;
+	-o-animation: outline 1.5s ease;
+	animation: outline 1.5s ease;
+	 
+}
+
+/* VALIDATION */
+
+@keyframes validation{
+
+	from { background-color: #c3c4c; color:white;}
+	to   { background-color: #4aff33; color:white;}
+}
+
+@-moz-keyframes validation{
+
+	from { background-color: #c3c4c; color:white;}
+	to   { background-color: #4aff33; color:white;}
+	
+}
+
+@-webkit-keyframes validation{
+
+	from { background-color: #c3c4c; color:white;}
+	to   { background-color: #5dd64e; color:white;}
+	
+}
+
+@-o-keyframes validation{
+
+	from { background-color: #c3c4c; color:white;}
+	to   { background-color: #4aff33; color:white;}
+	
+}
+
+.validation{
+   
+	-webkit-animation: validation 1s linear forwards;
+	-moz-animation: validation 1s linear forwards;
+	-ms-animation: validation 1s linear forwards;
+	-o-animation: validation 1s linear forwards;
+	animation: validation 1s linear forwards;
+	 
+}
