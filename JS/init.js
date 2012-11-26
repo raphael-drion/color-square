@@ -6,7 +6,7 @@ function init () {
 
 	paper = Raphael("authentification", 400, 400);
 	
-	// rect_main = paper.rect(20, 20, 360, 360).attr({fill: "white", stroke: "#444549"});
+	rect_main = paper.rect(20, 20, 360, 360).attr({fill: "white", stroke: "white"});
 	rect_NW = paper.rect(20, 20, 20, 20).attr({fill: "red",cursor: "move", opacity: 0.7});
 	rect_NE = paper.rect(360, 20, 20, 20).attr({fill: "#0080ff",cursor: "move", opacity: 0.7});
 	rect_SW = paper.rect(20, 360, 20, 20).attr({fill: "#ffae00",cursor: "move", opacity: 0.7});
@@ -214,7 +214,7 @@ function checktab(){
 	
 	
 	
-	if(test == 4){
+	/*if(test == 4){
 	
 	
 		paper.rect(20, 20, 360, 360).attr({fill: "white"});
@@ -242,15 +242,15 @@ function checktab(){
 		alert(test);
 		
 	
-	}
+	}*/
 	
-	/*if(test == 4){
+	if(test == 4){
 			
 		var rect_validation = paper.rect(200, 200, 10, 10).attr({fill: "green"});
             rect_validation.animate({x: 20, y: 20, width : 360, height : 360}, 750, babar);
 	
 	
-	}*/
+	}
 
 
 }
