@@ -1,17 +1,18 @@
-function init () {
+function init () {	
 	
-	tab_drag = [0,0,0,0];
 	
-	tab_final = [ [0,0,0,0], [0,0,0,0] , [0,0,0,0] , [0,0,0,0] ];	
 
-	paper = Raphael("authentification", 400, 400);
-	
+	paper = Raphael("authentification", 400, 400);	
 	rect_main = paper.rect(20, 20, 360, 360).attr({fill: "white", stroke: "white"});
 	rect_NW = paper.rect(20, 20, 20, 20).attr({fill: "red",cursor: "move", opacity: 0.7});
 	rect_NE = paper.rect(360, 20, 20, 20).attr({fill: "#0080ff",cursor: "move", opacity: 0.7});
 	rect_SW = paper.rect(20, 360, 20, 20).attr({fill: "#ffae00",cursor: "move", opacity: 0.7});
 	rect_SE = paper.rect(360, 360, 20, 20).attr({fill: "#87ff00",cursor: "move", opacity: 0.7});
 	
+	tab_drag = [0,0,0,0];	
+	tab_final = [ [0,0,0,0], [0,0,0,0] , [0,0,0,0] , [0,0,0,0] ];	
+	colors = ["white","red","#0080ff","#ffae00","#87ff00"];
+		
 	init_lines();
 	init_event_NW();
 	init_event_NE();
@@ -46,18 +47,21 @@ function init_event_NW(){
 			var width_NW = cut(rect_NW.attr("width"));
 			var height_NW = cut(rect_NW.attr("height"));
 						
-			if( ( width_NW == 10) || ( height_NW == 10) ) { this.attr({width: 20, height:20});this.toFront();init_lines();}
+			if( ( width_NW == 10) || ( height_NW == 10) ) { this.attr({width: 20, height:20});this.toFront();}
 			else{
 				this.attr({width: width_NW, height: height_NW});
 				this.toFront();
+				tab_fill(width_NW,height_NW,'NW');
 			}			
 			
-			tab_fill(width_NW,height_NW,'NW');
+			
 			rect_NW.undrag();
 			rect_NW.attr({cursor: "default"});
 			rect_NW.attr({opacity: 1});
+			
 			tab_drag[0] = 1;
-			checktab();
+			to_front(1);to_front(2);to_front(3);
+			checktab(0);
 			
 		}
 	
@@ -93,18 +97,20 @@ function init_event_NE(){
 			var width_NE = cut(rect_NE.attr("width"));
 			var height_NE = cut(rect_NE.attr("height"));
 						
-			if( ( width_NE == 10) || ( height_NE == 10) ) { this.attr({x : 360, y : 20,width: 20, height:20});init_lines();}
+			if( ( width_NE == 10) || ( height_NE == 10) ) { this.attr({x : 360, y : 20,width: 20, height:20});}
 			else{
 				this.attr({x : (380 - width_NE), width: width_NE, height: height_NE});
 				this.toFront();
+				tab_fill(width_NE,height_NE,'NE');
 			}			
 			
-			tab_fill(width_NE,height_NE,'NE');
 			rect_NE.undrag();
 			rect_NE.attr({cursor: "default"});
 			rect_NE.attr({opacity: 1});
+						
 			tab_drag[1] = 1;
-			checktab();
+			to_front(0);to_front(2);to_front(3);
+			checktab(1);
 			
 		}
 	
@@ -138,18 +144,22 @@ function init_event_SW(){
 			var width_SW = cut(rect_SW.attr("width"));
 			var height_SW = cut(rect_SW.attr("height"));
 						
-			if( ( width_SW == 10) || ( height_SW == 10) ) { this.attr({x : 20, y : 360,width: 20, height:20});init_lines();}
+			if( ( width_SW == 10) || ( height_SW == 10) ) { this.attr({x : 20, y : 360,width: 20, height:20});}
 			else{
 				this.attr({y : (380 - height_SW), width: width_SW, height: height_SW});
 				this.toFront();
+				tab_fill(width_SW,height_SW,'SW');
 			}	
 
-			tab_fill(width_SW,height_SW,'SW');
+			
 			rect_SW.undrag();
 			rect_SW.attr({cursor: "default"});
 			rect_SW.attr({opacity: 1});
+			
+			
 			tab_drag[2] = 1;
-			checktab();
+			to_front(0);to_front(1);to_front(3);
+			checktab(2);
 			
 		}
 	
@@ -183,18 +193,23 @@ function init_event_SE(){
 			var width_SE = cut(rect_SE.attr("width"));
 			var height_SE = cut(rect_SE.attr("height"));
 						
-			if( ( width_SE == 10) || ( height_SE == 10) ) { this.attr({x : 360, y : 360,width: 20, height:20});init_lines();}
+			if( ( width_SE == 10) || ( height_SE == 10) ) { this.attr({x : 360, y : 360,width: 20, height:20});}
 			else{
 				this.attr({x : (380 - width_SE), y : (380 - height_SE), width: width_SE, height: height_SE});
 				this.toFront();
+				tab_fill(width_SE,height_SE,'SE');
 			}			
 			
-			tab_fill(width_SE,height_SE,'SE');
+			
 			rect_SE.undrag();
 			rect_SE.attr({cursor: "default"});
 			rect_SE.attr({opacity: 1});
+			
+			
 			tab_drag[3] = 1;
-			checktab();
+			to_front(0);to_front(1);to_front(2);
+			checktab(3);
+			
 			
 		}
 	
@@ -202,7 +217,15 @@ function init_event_SE(){
 
 }
 
-function checktab(){
+function to_front(corner){
+	if((corner == 0) && (tab_drag[corner] == 0)){rect_NW.toFront();}
+	if((corner == 1) && (tab_drag[corner] == 0)){rect_NE.toFront();}
+	if((corner == 2) && (tab_drag[corner] == 0)){rect_SW.toFront();}
+	if((corner == 3) && (tab_drag[corner] == 0)){rect_SE.toFront();}
+}
+
+
+function checktab(corner){
 
 	var test = 0;
 	
@@ -212,52 +235,64 @@ function checktab(){
 	
 	}
 	
+	if(test == 4){
 	
+		paper.rect(20, 20, 360, 360).attr({stroke: "black"});
 	
-	/*if(test == 4){
+		var data = [[0,""],[0,""],[0,""],[0,""],[0,""]];	
 	
-	
-		paper.rect(20, 20, 360, 360).attr({fill: "white"});
-
-		rect_NW.toFront(); 
-		rect_NE.toFront();
-		rect_SW.toFront();
-		rect_SE.toFront(); 
-	
-		var test = '';
-		
 		for(k = 0; k < 4; k++){
 		
 			for(l = 0; l < 4; l++){
 			
-				tab_final[k][l];
-			
-				test += tab_final[k][l] + ' ';
-			
+				data[tab_final[k][l]][0]++;
+
 			}
-			
-			test += '-';
+		
 		}
 		
-		alert(test);
+		for(j = 0; j < 5; j++){
 		
+			data[j][1] = colors[j];
+		
+		}
+		
+		data.sort(function(b, a) { return (a[0] < b[0] ? -1 : (a[0] > b[0] ? 1 : 0)); });
 	
-	}*/
-	
-	if(test == 4){
+		var auth = d3.select("#authentification");
+		auth.classed("unvisibility",true);	
+		
+		setTimeout(function(){
+
+			d3.select("svg").remove(); 
 			
-		var rect_validation = paper.rect(200, 200, 10, 10).attr({fill: "green"});
-            rect_validation.animate({x: 20, y: 20, width : 360, height : 360}, 750, babar);
-	
+			auth.style("width", "800px");
+			
+			auth.classed("unvisibility",false);
+			auth.style("opacity", 1);
+			
+			
+			auth.append("p").text("SUCCESSFUL AUTHENTIFICATION").property("className","message");
+			auth.append("div").attr("id","feedback");
+			auth.append("p").text("DATA COLORS - FREQUENCY").property("className","message");
+			
+			
+			
+			var chart = auth.append("div").attr("class","chart");
+						
+			chart.selectAll("div").data(data).enter().append("div").style("background-color",function(d){return(d[1]);}).style("border",function(d){if(d[1] == "white"){return "1px solid #7c7c7c";}else{return "none";}}).style("color",function(d){if(d[1] == "white"){return "#7c7c7c";}else{return "white";}}).style("width", 0 + "px").text(function(d) { return d[0]; });
+			
+			
+			chart.selectAll("div").transition().delay(200).duration(1000).style("width", function(d) { if(d[0] == 0){return 6 + "px";}else{ if(d[1] == "white"){return d[0] * 50 + "px"; }else{return d[0] * 50 + 2 + "px";}}});
+			// chart.selectAll("div").style("background-color","black");
+						
+			init_bis();
+
+		},300);	
+		
 	
 	}
 
-
-}
-
-function babar(){
-
-	paper.text(200, 200, "Successfull Login").attr({"font-size": 40, fill: "white"});
 
 }
 
@@ -358,5 +393,31 @@ function tab_fill(width,height,corner){
 		
 	}
 
+
+}
+
+
+function init_bis(){
+
+	paper = Raphael("feedback", 180, 180);
+	
+	
+	var value ="";
+	
+	
+	
+	for(k = 0; k < 4; k++){
+		
+			for(l = 0; l < 4; l++){
+			
+				value = tab_final[k][l];
+				paper.rect(l*45,k*45, 45, 45).attr({fill: colors[value],stroke:colors[value]});				
+
+			}	
+		}
+	
+	 paper.rect(0, 0, 180, 180).attr({stroke: "black"});
+
+	 d3.select("svg").attr("class","visibility");
 
 }

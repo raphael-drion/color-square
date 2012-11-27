@@ -1,7 +1,14 @@
+@font-face{
+	font-family : square;
+	src : url(../FONTS/square.ttf);
+
+
+
+}
+
 body{
 
 	overflow:hidden;
-	/*background-image: url(../IMG/background.png);*/
 
 }
 
@@ -32,8 +39,6 @@ body{
 
 }
 
-
-
 #nav{
 
 	margin-left: auto;
@@ -62,8 +67,8 @@ body{
 
 #valid_login{
 
-	background-color : #7c7c7c;
-	border : 1px solid #a9a9a9	;
+	background-color : #a9a9a9;
+	border : 1px solid #8c8c8c	;
 	color : white;
 	cursor : pointer;
 	width : 75px;
@@ -84,6 +89,15 @@ body{
 
 }
 
+.message{
+
+	color : #7c7c7c;
+	font-weight:bold;
+	display:block;
+	font-family : square;
+
+}
+
 input{
 
 	color : #7c7c7c;
@@ -92,4 +106,12 @@ input{
 	font-weight:bold;
 }
 
+.chart div {
+	font: 10px sans-serif;
+	background-color: steelblue;
+	text-align: right;
+	padding: 3px;
+	margin: 1px;
+	color: white;
+}
 

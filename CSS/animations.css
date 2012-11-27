@@ -29,11 +29,11 @@
 
 .move{
    
-	-webkit-animation: move 2s linear forwards;
-	-moz-animation: move 2s linear forwards;
-	-ms-animation: move 2s linear forwards;
-	-o-animation: move 2s linear forwards;
-	animation: move 2s linear forwards;
+	-webkit-animation: move 1s linear forwards;
+	-moz-animation: move 1s linear forwards;
+	-ms-animation: move 1s linear forwards;
+	-o-animation: move 1s linear forwards;
+	animation: move 1s linear forwards;
 	 
 }
 
@@ -68,13 +68,54 @@
 
 .visibility{
    
-	-webkit-animation: visibility 2s linear forwards;
-	-moz-animation: visibility 2s linear forwards;
-	-ms-animation: visibility 2s linear forwards;
-	-o-animation: visibility 2s linear forwards;
-	animation: visibility 2s linear forwards;
+	-webkit-animation: visibility 1.5s linear forwards;
+	-moz-animation: visibility 1.5s linear forwards;
+	-ms-animation: visibility 1.5s linear forwards;
+	-o-animation: visibility 1.5s linear forwards;
+	animation: visibility 1.5s linear forwards;
 	 
 }
+
+/* UNVISIBILIRY */
+
+@keyframes unvisibility{
+
+	from { opacity: 1; }
+	to   { opacity: 0; }
+}
+
+@-moz-keyframes unvisibility{
+
+	from { opacity: 1; }
+	to   { opacity: 0; }
+	
+}
+
+@-webkit-keyframes unvisibility{
+
+	from { opacity: 1; }
+	to   { opacity: 0; }
+	
+}
+
+@-o-keyframes unvisibility{
+
+	from { opacity: 1; }
+	to   { opacity: 0; }
+	
+}
+
+.unvisibility{
+   
+	-webkit-animation: unvisibility 0.3s linear forwards;
+	-moz-animation: unvisibility 0.3s linear forwards;
+	-ms-animation: unvisibility 0.3s linear forwards;
+	-o-animation: unvisibility 0.3s linear forwards;
+	animation: unvisibility 0.3s linear forwards;
+	 
+}
+
+
 
 /* OUTLINE */
 
@@ -124,37 +165,41 @@
 @keyframes validation{
 
 	from { background-color: #c3c4c; color:white;}
-	to   { background-color: #5dd64e; color:white;}
+	50%   { background-color: #5dd64e; color:white;}
+	to   { background-color: #a9a9a9; color:white;}
 }
 
 @-moz-keyframes validation{
 
 	from { background-color: #c3c4c; color:white;}
-	to   { background-color: #5dd64e; color:white;}
+	50%   { background-color: #5dd64e; color:white;}
+	to   { background-color: #a9a9a9; color:white;}
 	
 }
 
 @-webkit-keyframes validation{
 
 	from { background-color: #c3c4c; color:white;}
-	to   { background-color: #5dd64e; color:white;}
+	50%   { background-color: #5dd64e; color:white;}
+	to   { background-color: #a9a9a9; color:white;}
 	
 }
 
 @-o-keyframes validation{
 
 	from { background-color: #c3c4c; color:white;}
-	to   { background-color: #5dd64e; color:white;}
+	50%   { background-color: #5dd64e; color:white;}
+	to   { background-color: #a9a9a9; color:white;}
 	
 }
 
 .validation{
    
-	-webkit-animation: validation 1s linear forwards;
-	-moz-animation: validation 1s linear forwards;
-	-ms-animation: validation 1s linear forwards;
-	-o-animation: validation 1s linear forwards;
-	animation: validation 1s linear forwards;
+	-webkit-animation: validation 2s linear forwards;
+	-moz-animation: validation 2s linear forwards;
+	-ms-animation: validation 2s linear forwards;
+	-o-animation: validation 2s linear forwards;
+	animation: validation 2s linear forwards;
 	 
 }
 
@@ -189,11 +234,11 @@
 
 #column1{
    
-	-webkit-animation: column1 2s linear forwards;
-	-moz-animation: column1 2s linear forwards;
-	-ms-animation: column1 2s linear forwards;
-	-o-animation: column1 2s linear forwards;
-	animation: column1 2s linear forwards;
+	-webkit-animation: column1 0.5s linear forwards;
+	-moz-animation: column1 0.5s linear forwards;
+	-ms-animation: column1 0.5s linear forwards;
+	-o-animation: column1 0.5s linear forwards;
+	animation: column1 0.5s linear forwards;
 	 
 }
 
@@ -202,73 +247,73 @@
 @keyframes column2{
 
 	from { left: -100px; }
-	to   { left: 145px; }
+	to   { left: 115px; }
 }
 
 @-moz-keyframes column2{
 
 	from { left: -100px; }
-	to   { left: 145px;}
+	to   { left: 115px;}
 	
 }
 
 @-webkit-keyframes column2{
 
 	from { left: -100px;}
-	to   { left: 145px;}
+	to   { left: 115px;}
 	
 }
 
 @-o-keyframes column2{
 
 	from { left: -100px;}
-	to   { left: 145px;}
+	to   { left: 115px;}
 	
 }
 
 #column2{
    
-	-webkit-animation: column2 1.5s linear forwards 1s;
-	-moz-animation: column2 1.5s linear forwards 1s;
-	-ms-animation: column2 1.5s linear forwards 1s;
-	-o-animation: column2 1.5s linear forwards 1s;
-	animation: column2 1.5s linear forwards 1s;
+	-webkit-animation: column2 0.5s linear forwards 0.5s;
+	-moz-animation: column2 0.5s linear forwards 0.5s;
+	-ms-animation: column2 0.5s linear forwards 0.5s;
+	-o-animation: column2 0.5s linear forwards 0.5s;
+	animation: column2 0.5s linear forwards 0.5s;
 	 
 }/* COLUMN3 */
 
 @keyframes column3{
 
 	from { left: -100px; }
-	to   { left: 215px; }
+	to   { left: 155px; }
 }
 
 @-moz-keyframes column3{
 
 	from { left: -100px; }
-	to   { left: 215px;}
+	to   { left: 155px;}
 	
 }
 
 @-webkit-keyframes column3{
 
 	from { left: -100px;}
-	to   { left: 215px;}
+	to   { left: 155px;}
 	
 }
 
 @-o-keyframes column3{
 
 	from { left: -100px;}
-	to   { left: 215px;}
+	to   { left: 155px;}
 	
 }
 
 #column3{
    
-	-webkit-animation: column3 1s linear forwards 2s;
-	-moz-animation: column3 1s linear forwards 2s;
-	-ms-animation: column3 1s linear forwards 2s;
-	-o-animation: column3 1s linear forwards 2s;
-	animation: column3 1s linear forwards 2s;
+	-webkit-animation: column3 0.5s linear forwards 1s;
+	-moz-animation: column3 0.5s linear forwards 1s;
+	-ms-animation: column3 0.5s linear forwards 1s;
+	-o-animation: column3 0.5s linear forwards 1s;
+	animation: column3 0.5s linear forwards 1s;
 	 
 }
